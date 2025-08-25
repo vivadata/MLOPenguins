@@ -1,0 +1,11 @@
+
+# Python
+__pycache__/
+*.ipynb_checkpoints
+
+# data
+data/
+models
+
+# Virtual Environment
+.python-version
