@@ -5,3 +5,10 @@ create_env :
 
 install_deps : 
 	pip install -e . 
+
+mlflow : 
+	@echo "Starting MLflow UI..."
+	mlflow ui
+
+allow_direnv : 
+	direnv allow .
