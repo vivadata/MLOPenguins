@@ -4,4 +4,4 @@ create_env :
 	pyenv local penguins
 
 install_deps : 
-	pip install -r requirements.in
+	pip install -e . 

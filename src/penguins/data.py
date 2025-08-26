@@ -13,7 +13,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.model_selection import train_test_split
 
-from registry import save_model, load_model
+from penguins.registry import save_model, load_model
 
 logger = loguru.logger
 
@@ -40,7 +40,7 @@ def clean_data(data:pd.DataFrame) -> pd.DataFrame:
     logger.info("✅ Data cleaned")    
     return data
 
-def preprocess_data(data:pd.DataFrame, fit=False):
+def preprocess_data(data:pd.DataFrame, fit=False)->pd.DataFrame:
     pipe = instantiate_preprocessor(data,fit=fit)
     return pipe.transform(data)
 
@@ -68,7 +68,6 @@ def instantiate_preprocessor(data,fit=False) -> Pipeline:
         preproc = load_model("preprocessor")
     return preproc
     
-
 def get_X_y(data):
     """
     Split the data into features and target. 
@@ -84,4 +83,4 @@ if __name__ == "__main__":
     X_train, X_test, y_train, y_test = get_X_y(cleaned_data)
     X_train_preproc = preprocess_data(X_train, fit=True)
     X_test_preproc = preprocess_data(X_test, fit=False)
-    print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
+    logger.info("✅ Data preprocessing complete")   

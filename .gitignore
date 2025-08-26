@@ -9,3 +9,8 @@ models
 
 # Virtual Environment
 .python-version
+
+# Python Package
+build/
+dist/
+*.egg-info/
