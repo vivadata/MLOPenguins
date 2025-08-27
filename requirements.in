@@ -4,3 +4,4 @@ seaborn
 plotly-express
 loguru
 mlflow
+prefect
