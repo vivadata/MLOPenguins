@@ -1,21 +1,20 @@
 from prefect import flow, task
 from prefect.logging import loggers
-import loguru 
 import time
+import prefect
 
-from loguru import logger
+logger = prefect.logging.get_logger()
 
-@task
+@task(log_prints=True)
 def load_data() :
     logger = loggers.get_run_logger()
-    logger.info("Is this correct ?")
-    loggers.print_as_log("✅ Data Loaded")
+    logger.info("✅ Data Loaded")
     time.sleep(2)
     return 1
 
 @task 
 def preproc(X):
-    loguru.logger.info("✅ Data preprocessed")
+    logger.info("✅ Data preprocessed")
     time.sleep(2)
     return 1
 
@@ -33,7 +32,7 @@ def evaluate(model,X_test,y_test):
     time.sleep(3)
     return 1
     
-@task 
+@task()
 def notify(trained,score):
     logger = loggers.get_run_logger()
     logger.info("✅ Model Trained")

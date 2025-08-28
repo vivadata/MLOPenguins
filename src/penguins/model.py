@@ -10,11 +10,11 @@ from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_sc
 
 
 from penguins.registry import save_model, load_model
-from penguins.params import MLFLOW_EXPERIMENT_NAME, MLFLOW_TRACKING_URI
+from penguins.params import MLFLOW_EXPERIMENT_NAME, MLFLOW_URI
 
 logger = loguru.logger
 
-mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
+mlflow.set_tracking_uri(MLFLOW_URI)
 mlflow.set_experiment(MLFLOW_EXPERIMENT_NAME)
 
 def instantiate_model(fit=True):

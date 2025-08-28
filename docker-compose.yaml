@@ -1,0 +1,16 @@
+services:
+  mlflow:
+    build:
+      context: .
+      dockerfile: Dockerfile-mlflow
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+  
+  prefect:
+    image: prefecthq/prefect:3.4.15.dev2-python3.10
+    ports:
+      - "4200:4200"
+    env_file:
+      - .env
