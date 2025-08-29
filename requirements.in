@@ -8,3 +8,5 @@ prefect
 fastapi
 uvicorn
 python-multipart
+streamlit
+requests
