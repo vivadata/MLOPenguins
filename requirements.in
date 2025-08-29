@@ -1,12 +1,21 @@
+# Machine Learning
 pandas
 scikit-learn
+mlflow
+
+# Data Viz
 seaborn
 plotly-express
-loguru
-mlflow
 prefect
+
+# Back
 fastapi
 uvicorn
 python-multipart
-streamlit
+
+# Front
 requests
+streamlit
+
+# Helpers
+loguru

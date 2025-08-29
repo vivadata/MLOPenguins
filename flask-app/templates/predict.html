@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/predict" method="post" class="predict-form">
+	<label for="bill_length_mm">Bill Length (mm) *</label>
+	<input type="number" id="bill_length_mm" name="bill_length_mm" required>
+
+	<label for="bill_depth_mm">Bill Depth (mm) *</label>
+	<input type="number" id="bill_depth_mm" name="bill_depth_mm" required>
+
+	<label for="flipper_length_mm">Flipper Length (mm) *</label>
+	<input type="number" id="flipper_length_mm" name="flipper_length_mm" required>
+
+	<label for="body_mass_g">Body Mass (g) *</label>
+	<input type="number" id="body_mass_g" name="body_mass_g" required>
+
+	<label for="sex">Sex *</label>
+	<select id="sex" name="sex" required>
+		<option value="">Select...</option>
+		<option value="Male">Male</option>
+		<option value="Female">Female</option>
+	</select>
+
+	<button type="submit">Predict</button>
+</form>
+{% endblock %}
+
+

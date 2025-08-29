@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Prediction Result</h2>
+<p>The predicted species is: {{ prediction }}</p>
+<img src="{{ url_for('static', filename='images/' + prediction + '.jpg') }}" alt="{{ prediction }}">
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil - Application Penguin</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles/home.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/adelie.avif') }}" alt="Penguin" class="penguin-img">
+        <h1>Bienvenue sur Penguin App !</h1>
+        <p>
+            Découvrez le monde fascinant des manchots.<br>
+            Cette application vous propose des informations, des anecdotes et bien plus encore sur ces adorables animaux.
+        </p>
+        <a href="#" class="btn">En savoir plus</a>
+    </div>
+</body>
+</html>
+{% endblock %}
